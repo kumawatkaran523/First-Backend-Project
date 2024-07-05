@@ -62,7 +62,6 @@ userSchema.methods.isPasswordCorrect= async function(password){
 }
 
 // * JWT (JSON WEB TOKEN) is a kind of bearer token mean yeh token jiske bhi pass h aur jo bhi mujhe yeh token bhejega mai use data bhej dunga
-
 userSchema.methods.generateAccessToken= function(){
     return jwt.sign(
         {
@@ -81,9 +80,6 @@ userSchema.methods.generateRefreshToken= function(){
     return jwt.sign(
         {
             _id:this._id,
-            email:this.email,
-            userName:this.userName,
-            fullName:this.fullName,
         },
         process.env.REFRESH_TOKEN_SECRET,
         {
