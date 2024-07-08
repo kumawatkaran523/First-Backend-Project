@@ -18,7 +18,8 @@ const uploadCloudinary=async (localFilePath)=>{
                resource_type:'auto',
            }
        )
-       console.log("file is uploaded on cloudinary",uploadResult.url);
+    //    console.log("file is uploaded on cloudinary",uploadResult.url);
+    fs.unlinkSync(localFilePath)
        return uploadResult;
     } catch (error) {
         fs.unlinkSync(localFilePath)  //* remove the locally saved temporary file as the upload operation got failed
@@ -46,3 +47,5 @@ const uploadCloudinary=async (localFilePath)=>{
     
     console.log(autoCropUrl);    
 })();
+
+export {uploadCloudinary}
