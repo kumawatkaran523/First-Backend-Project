@@ -1,7 +1,7 @@
 import mongoose, { Schema, Types } from "mongoose";
 
 const subscriptionSchema = new Schema({
-    subsribe:{
+    subsriber:{
         type:Schema.Types.ObjectId,  //& one who is subscribing
         ref:"User"
     },
@@ -9,7 +9,7 @@ const subscriptionSchema = new Schema({
        type:Schema.Types.ObjectId, //& one to whom 'subscriber' is suscribing
        ref:"User"
     }
-
+ 
 },
     { timestamps: true }
 )
