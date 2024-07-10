@@ -26,7 +26,7 @@ connectDB()
 })
 
 
-//~ First Approach
+// ~First Approach
 /*
 import express from 'express'
 const app=express()
