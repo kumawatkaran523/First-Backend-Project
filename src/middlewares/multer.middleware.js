@@ -10,5 +10,5 @@ const storage = multer.diskStorage({
   })
   
 export const upload = multer({ 
-    storage: storage //  or just storage ,no need of storage:storage due ES6
+    storage: storage //  or just storage ,no need of storage:storage due ES6 javascript flexibility
 })

@@ -79,7 +79,6 @@ const registerUser = asyncHandler(async (req, res) => {
         password,
         userName: userName.toLowerCase()
     })
-    kkm
     const createdUser = await User.findById(user._id).select("-password -refreshToken")
 
     if (!createdUser) {
@@ -356,7 +355,7 @@ const getUserChannelProfile=asyncHandler(async (req,res)=>{
                     $size:"$subscribers"
                 },
                 channelSubscribedToCount:{
-                    $size:"subscribedTo"
+                    $size:"$subscribedTo"
                 },
                 isSubscribed:{
                     $cond:{
